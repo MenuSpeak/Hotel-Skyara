@@ -973,6 +973,94 @@
         display: none;
       }
     }
+
+
+    /* Tabs Navigation - Category Buttons */
+.tabs-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.tabs-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  margin: 2px;
+}
+
+.tab.active {
+  background: linear-gradient(90deg, var(--gold1), var(--gold2));
+  color: #0b0b0d;
+  border: none;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.12);
+}
+
+/* Hover effect for better UX */
+.tab:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .tabs-scroll {
+    justify-content: flex-start;
+  }
+  
+  .tab {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .tab {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .tab {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  
+  .tabs-scroll {
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .tab {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .tabs-scroll {
+    gap: 5px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -1013,6 +1101,7 @@
 
           <div class="tabs-scroll">
            <button class="tab active" data-cat="all">All</button>
+            <button class="tab" data-cat="VEG ROLLS">VEG ROLLS</button>
 <button class="tab" data-cat="PIZZA">PIZZA</button>
 <button class="tab" data-cat="SHAKES/COLD COFFEE">SHAKES/COLD COFFEE</button>
 <button class="tab" data-cat="BURGER">BURGER</button>
@@ -1155,6 +1244,23 @@
   <script>
     // Menu Data   
     const data = [
+{"id": 84, "cat": "VEG ROLLS", "name": "Aloo Roll (Plain)", "price": "Rs. 30", "desc": "Delicious potato filling roll", "tags": ["Veg", "Rolls"], "img": "img/ALOO_ROLL_PLAIN.jpeg"},
+{"id": 85, "cat": "VEG ROLLS", "name": "Aloo Roll (Cheese)", "price": "Rs. 50", "desc": "Potato roll with melted cheese", "tags": ["Veg", "Rolls"], "img": "img/ALOO_ROLL_CHEESE.jpeg"},
+{"id": 86, "cat": "VEG ROLLS", "name": "Aloo Roll (Cheese Crispy)", "price": "Rs. 55", "desc": "Crispy potato roll with cheese", "tags": ["Veg", "Rolls"], "img": "img/ALOO_ROLL_CRISPY.jpeg"},
+{"id": 87, "cat": "VEG ROLLS", "name": "Paneer Roll (Plain)", "price": "Rs. 55", "desc": "Classic paneer tikka roll", "tags": ["Veg", "Rolls"], "img": "img/PANEER_ROLL_PLAIN.jpeg"},
+{"id": 88, "cat": "VEG ROLLS", "name": "Paneer Roll (Cheese)", "price": "Rs. 75", "desc": "Paneer roll with extra cheese", "tags": ["Veg", "Rolls"], "img": "img/PANEER_ROLL_CHEESE.jpeg"},
+{"id": 89, "cat": "VEG ROLLS", "name": "Paneer Roll (Cheese Crispy)", "price": "Rs. 80", "desc": "Extra crispy paneer cheese roll", "tags": ["Veg", "Rolls"], "img": "img/PANEER_ROLL_CRISPY.jpeg"},
+{"id": 90, "cat": "VEG ROLLS", "name": "Mushroom Chilli Roll (Plain)", "price": "Rs. 60", "desc": "Spicy mushroom filling roll", "tags": ["Veg", "Rolls"], "img": "img/MUSHROOM_ROLL_PLAIN.jpeg"},
+{"id": 91, "cat": "VEG ROLLS", "name": "Mushroom Chilli Roll (Cheese)", "price": "Rs. 80", "desc": "Mushroom roll with cheese", "tags": ["Veg", "Rolls"], "img": "img/MUSHROOM_ROLL_CHEESE.jpeg"},
+{"id": 92, "cat": "VEG ROLLS", "name": "Mushroom Chilli Roll (Cheese Crispy)", "price": "Rs. 85", "desc": "Crispy mushroom roll with cheese", "tags": ["Veg", "Rolls"], "img": "img/MUSHROOM_ROLL_CRISPY.jpeg"},
+{"id": 93, "cat": "VEG ROLLS", "name": "Mix Veg Roll (Plain)", "price": "Rs. 60", "desc": "Healthy mixed vegetable roll", "tags": ["Veg", "Rolls"], "img": "img/MIX_VEG_ROLL_PLAIN.jpeg"},
+{"id": 94, "cat": "VEG ROLLS", "name": "Mix Veg Roll (Cheese)", "price": "Rs. 80", "desc": "Mix veg roll with creamy cheese", "tags": ["Veg", "Rolls"], "img": "img/MIX_VEG_ROLL_CHEESE.jpeg"},
+{"id": 95, "cat": "VEG ROLLS", "name": "Mix Veg Roll (Cheese Crispy)", "price": "Rs. 85", "desc": "Crispy mixed vegetable cheese roll", "tags": ["Veg", "Rolls"], "img": "img/MIX_VEG_ROLL_CRISPY.jpeg"},
+{"id": 96, "cat": "VEG ROLLS", "name": "Special Cheese Roll (Plain)", "price": "Rs. 35", "desc": "Chef's special cheese loaded roll", "tags": ["Veg", "Rolls"], "img": "img/SPECIAL_CHEESE_ROLL.jpeg"},
+{"id": 97, "cat": "VEG ROLLS", "name": "Special Cheese Roll (Crispy)", "price": "Rs. 40", "desc": "Chef's special crispy cheese roll", "tags": ["Veg", "Rolls"], "img": "img/SPECIAL_CHEESE_ROLL_CRISPY.jpeg"},
+{"id": 98, "cat": "VEG ROLLS", "name": "Special Corn Cheese Roll (Plain)", "price": "Rs. 45", "desc": "Sweet corn and cheese specialty roll", "tags": ["Veg", "Rolls"], "img": "img/SPECIAL_CORN_ROLL.jpeg"},
+{"id": 99, "cat": "VEG ROLLS", "name": "Special Corn Cheese Roll (Crispy)", "price": "Rs. 50", "desc": "Crispy corn and cheese specialty roll", "tags": ["Veg", "Rolls"], "img": "img/SPECIAL_CORN_ROLL_CRISPY.jpeg"},
+      
 {"id": 1, "cat": "PIZZA", "name": "Plain pizza 7\" / प्लेन पिझ्झा ७\"", "price": "Rs. 110", "desc": "Classic 7 inch plain cheese pizza", "tags": ["Veg", "Pizza"], "img": "img/PLAIN_PIZZA_7.jpeg"},
 {"id": 2, "cat": "PIZZA", "name": "Paneer pizza 7\" / पनीर पिझ्झा ७\"", "price": "Rs. 140", "desc": "7 inch pizza topped with paneer", "tags": ["Veg", "Pizza"], "img": "img/PANEER_PIZZA_7.jpeg"},
 {"id": 3, "cat": "PIZZA", "name": "Paneer pizza 8\" / पनीर पिझ्झा ८\"", "price": "Rs. 180", "desc": "8 inch pizza topped with paneer", "tags": ["Veg", "Pizza"], "img": "img/PANEER_PIZZA_8.jpeg"},
